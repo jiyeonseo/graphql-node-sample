@@ -1,4 +1,5 @@
 type Person {
+  id: Int!
   name: String!
   age: Int!
   gender: String!
@@ -9,10 +10,3 @@ type Query {
   people: [Person]!
   person(id: Int!): Person
 }
-
-
-# type Query {
-# //     hello(name: String): String!,
-# //     name: String!
-# //
-# //   }
