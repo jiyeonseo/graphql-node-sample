@@ -5,10 +5,17 @@ type Person {
   gender: String!
 }
 
+type Movie {
+  id: Int!,
+  title: String!
+  rating: Float!
+}
+
 type Query {
   hello(name: String): String!
   people: [Person]!
   person(id: Int!): Person
+  movies(limit: Int, rating: Float): [Movie]!
 }
 
 # {

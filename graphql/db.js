@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 const jiyeon = {
   id : 1,
   name : 'jiyeon',
@@ -32,4 +34,14 @@ export const addPerson = (name, age, gender) => {
 
   people.push(newPerson);
   return newPerson;
+}
+
+// Movie API
+
+const API_URL = "https://yts.am/api/v2/list_movies.json";
+
+export const getMovies = (limit, rating) => {
+  const limitParam = limit !== null ? "limit="+limit : "";
+  const ratingParam = rating !== null ? "minimum_rating="+rating : "";
+  return fetch(`${API_URL}?${limitParam}&${ratingParam}`).then(res => res.json()).then(json => json.data.movies);
 }
