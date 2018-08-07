@@ -10,3 +10,19 @@ type Query {
   people: [Person]!
   person(id: Int!): Person
 }
+
+# {
+#   person(id:1) {
+#     name
+#   }
+# }
+
+type Mutation {
+  addPerson(name: String!, age:Int!, gender:String!) : Person!
+}
+
+# mutation {
+#   addPerson(name: "aa", age :10, gender: "female") {
+#     name
+#   }
+# }
